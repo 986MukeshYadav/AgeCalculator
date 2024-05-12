@@ -7,13 +7,13 @@ function calculateAge() {
   var monthDiff = today.getMonth() - dobDate.getMonth();
   var dayDiff = today.getDate() - dobDate.getDate();
   
-  // Adjust age if birth month is later than current month or if birth day is later than current day
+  
   if (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0)) {
       ageYears--;
       monthDiff += 12;
   }
   
-  // Calculate remaining months and days
+ 
   var ageMonths = monthDiff;
   var ageDays = dayDiff < 0 ? daysInMonth(today.getMonth() - 1, today.getFullYear()) - dobDate.getDate() + today.getDate() : dayDiff;
 
@@ -21,7 +21,7 @@ function calculateAge() {
   result.innerText = "Your age is: " + ageYears + " years, " + ageMonths + " months, and " + ageDays + " days.";
 }
 
-// Function to get the number of days in a month
+
 function daysInMonth(month, year) {
   return new Date(year, month + 1, 0).getDate();
 }
